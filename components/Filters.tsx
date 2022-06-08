@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 function Filters() {
   const dispatch = useDispatch<AppDispatch>();
   const filterType = useSelector(
-    (state: RootState) => state.entries.filter_type,
+    (state: RootState) => state.entries.filterType,
   );
 
   const handleClick = (filter: string) => {
