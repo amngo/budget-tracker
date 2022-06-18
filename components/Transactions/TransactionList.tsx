@@ -3,7 +3,7 @@ import Spinner from "components/Spinner";
 import { getEntries } from "features/entry/entryThunk";
 import { Entry } from "models";
 import moment from "moment";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TransactionGroup from "./TransactionGroup";
 

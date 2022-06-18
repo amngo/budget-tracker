@@ -7,7 +7,7 @@ import Header from "components/Layout";
 import Modal from "components/Modal";
 import Transactions from "components/Transactions";
 import { getSession } from "features/auth/authSlice";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import supabase from "supabaseClient";
 
@@ -16,8 +16,7 @@ function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSession());
-    supabase.auth.onAuthStateChange((event, sessionData) => {
-      console.log({ event, sessionData });
+    supabase.auth.onAuthStateChange(() => {
       dispatch(getSession());
     });
   }, [dispatch]);

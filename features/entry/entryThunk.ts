@@ -52,7 +52,11 @@ export const addEntry = createAsyncThunk(
       throw new Error(error.message);
     }
 
-    dispatch(getEntries(state.date.currentDate));
+    dispatch(
+      getEntries(
+        moment(state.date.currentDate, "MMM YYYY").format("YYYY-MM-DDTHH:mm"),
+      ),
+    );
   },
 );
 
